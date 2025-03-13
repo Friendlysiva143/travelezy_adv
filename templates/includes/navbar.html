@@ -18,15 +18,16 @@
             </div>
         </div>
         <a href="{% url 'trips' %}" class="btn btn-outline-primary float-right" style="color: black;">See all</a>
-            <input type="text" id="search" name="search" placeholder="Search for destinations..." required>
+        <form action="{% url 'search' %}" class="search_box" method="GET">
+            <input type="text" id="search" name="keyword" placeholder="Search for destinations..." required>
             <button type="submit">Search</button>
+        </form>
         <a href="/">Home</a>
-        {% if user.is_authenticated %}
-        <a href="accounts/profile">Hello, {{ user.first_name }}</a>
+        
+        <a href="accounts/profile">Hello</a>
         <a href="accounts/logout">Logout</a>
-        {% else %}
-        <a href="accounts/login">Login</a>
-        <a href="accounts/register">Register</a>
-        {% endif %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        
     </nav>
 </header>

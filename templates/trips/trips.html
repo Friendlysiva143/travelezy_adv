@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="section-title">
+    {% if 'search' in request.path %}
+    <h2 class="title-page">searched places</h2>
+    {% else %}
         <h2 class="title-page">Place to visit</h2>
+    {% endif %}
 </section>
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
@@ -77,8 +81,10 @@
             </div>
         </article> <!-- filter-group .// -->
         
-    </div> <!-- card.// -->    
+    </div> <!-- card.// -->  
+    <div> {{places_count}} places found </div>  
     <div class="advent">
+        {% if places %}
         {% for place in places %}
         <div class="col-md">
             <figure class="card card-product-grid">
@@ -99,6 +105,9 @@
             </figure>
         </div> <!-- col.// -->
         {% endfor %}
+        {% else %}
+        <div>no results found.. try again</div>
+        {% endif %}
     </div>
     </div>
     
