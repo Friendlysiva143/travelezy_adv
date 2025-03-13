@@ -36,6 +36,7 @@
     <section class="image-carousel">
         <div class="carousel">
             {% for adv in places %}
+            {% if adv.allowed %}
             <div class="carousel-item">
                 <a href="{{adv.get_url}}"><img src="{{adv.images.url}}" alt="Beautiful beach view"></a>
                 <div class="carousel-content">
@@ -45,6 +46,7 @@
                     <p>ALLOWED TO EXPLORE</p> 
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
         <button class="carousel-button" id="prev">❮</button>
