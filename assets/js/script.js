@@ -22,4 +22,4 @@ document.getElementById('prev').addEventListener('click', () => {
 setInterval(() => {
     currentIndex = (currentIndex + 1) % totalItems;
     showSlide(currentIndex);
-}, 5000); // Change slide every 5 seconds
+}, 2000); // Change slide every 5 seconds

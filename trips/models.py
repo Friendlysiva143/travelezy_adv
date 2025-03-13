@@ -1,5 +1,6 @@
 from django.db import models
 from catogery.models import Catogery
+from django.urls import reverse
 
 # Create your models here.
 class Places(models.Model):
@@ -13,6 +14,8 @@ class Places(models.Model):
     catogery=models.ForeignKey(Catogery,on_delete=models.CASCADE)
     created_date=models.DateTimeField(auto_now_add=True)
     modified_date=models.DateTimeField(auto_now_add=True)
+    def get_url(self):
+        return reverse('place_details',args=[self.catogery.slug,self.slug])
     class Meta:
         verbose_name='place'
         verbose_name_plural='places'

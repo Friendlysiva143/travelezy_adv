@@ -35,18 +35,14 @@
 
     <section class="image-carousel">
         <div class="carousel">
-            <p>this is adventures page</p>
-            {% for adv in advs %}
-            
+            {% for adv in places %}
             <div class="carousel-item">
-                <a href="#"><img src="{{ adv.img.url }}" alt="Beautiful beach view"></a>
+                <a href="{{adv.get_url}}"><img src="{{adv.images.url}}" alt="Beautiful beach view"></a>
                 <div class="carousel-content">
-                    <h2>{{ adv.name }}</h2>
-                    <p>{{ adv.desc }}</p>
-                    <p>Time: {{ adv.time }}</p>
-                    {% if adv.offer %}
-                    <p>SPECIAL OFFER</p>
-                    {% endif %}
+                    <h2>{{adv.place_name}}</h2>
+                    <p>{{adv.description}}</p>
+                    <p>Time: {{adv.start_date}}</p>
+                    <p>ALLOWED TO EXPLORE</p> 
                 </div>
             </div>
             {% endfor %}
@@ -56,23 +52,20 @@
     </section>
     <section class="section-name padding-y-sm">
         <div class="container">
-            
-        <div class="row">
-            {% for place in places %}
-            <div class="col-md-3" style="width:max-content">
-                <div class="card card-product-grid">
-                    <a href="./product-detail.html" class="img-wrap"> <img style="height: 200px;width: 200px;" src="{{place.images.url}}"> </a>
-                    <figcaption class="info-wrap">
-                        <a href="./product-detail.html" class="title">{{place.place_name}}</a>
-                        <div class="price mt-1">{{place.description}}</div> <!-- price-wrap.// -->
-                        <p>{{place.start_date}}</p>
-                        <p>{{place.end_date}}</p>
-                    </figcaption>
+                {% for place in places %}
+                <div class="col-md">
+                    <div class="card card-product-grid">
+                        <a href="{{place.get_url}}" class="img-wrap"> <img style="height: 200px;width: 200px;" src="{{place.images.url}}"> </a>
+                        <figcaption class="info-wrap">
+                            <a href="{{place.get_url}}" class="title">{{place.place_name}}</a>
+                            <div class="price mt-1">{{place.description}}</div> <!-- price-wrap.// -->
+                            <p>{{place.start_date}}</p>
+                            <p>{{place.end_date}}</p>
+                        </figcaption>
+                    </div>
                 </div>
-            </div>
-        
-        {% endfor %}
+                {% endfor %}
         </div><!-- container // -->
-        </section>
+    </section>
 
 {% endblock %}

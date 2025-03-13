@@ -38,7 +38,7 @@ header .logo img {
 }
 
 .title {
-    font-size: 42px; /* Increase font size for the title */
+    font-size: 50px; /* Increase font size for the title */
     font-weight: bold; /* Make the title bold */
     color: #FFD700; /* Gold color for the title */
     margin: 0; /* Remove default margin */
@@ -72,41 +72,40 @@ header .logo img {
 }
 
 .dropbtn {
-    background-color: #007bff; /* Button color */
-    color: white;
-    padding: 10px 15px;
+    background-color: #1321e6; /* Green */
+    color: rgb(185, 32, 32);
+    padding: 10px 16px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .dropdown-content {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
-    background-color: white; /* Background color for dropdown */
-    min-width: 160px; /* Minimum width of dropdown */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    background-color: #ffffff; /* Light grey */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black; /* Text color */
-    padding: 12px 16px; /* Padding for dropdown items */
-    text-decoration: none; /* Remove underline */
-    display: block; /* Make links block elements */
+    color: rgb(8, 8, 8); /* Black text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1; /* Background color on hover */
+    background-color: #44b038; /* Light grey on hover */
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown */
+    display: block; /* Show the dropdown on hover */
 }
 
-.dropbtn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41; /* Darker green on hover */
 }
 
 .search-category button[type="submit"] {
@@ -381,4 +380,35 @@ h1 {
 .contact-info p {
     text-align: center;
     color: #555;
+}
+.section-name .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts spacing between items */
+}
+
+.section-name .col-md-3 {
+    flex: 0 0 23%; /* Adjusts the width of each column */
+    margin-bottom: 20px; /* Space between rows */
+}
+
+.card-product-grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards have the same height */
+    border: 1px solid #ddd ;border-radius: 5px;
+    overflow:hidden;
+}
+
+.img-wrap {
+    flex: 1; /* Allows the image to take available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-product-grid img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }

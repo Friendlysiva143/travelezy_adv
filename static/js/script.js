@@ -22,4 +22,18 @@ document.getElementById('prev').addEventListener('click', () => {
 setInterval(() => {
     currentIndex = (currentIndex + 1) % totalItems;
     showSlide(currentIndex);
-}, 5000); // Change slide every 5 seconds
+}, 2000); // Change slide every 5 seconds
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.col-md');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'scale(1.05)'; // Slightly enlarge the card on hover
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'scale(1)'; // Reset the card size
+        });
+    });
+});

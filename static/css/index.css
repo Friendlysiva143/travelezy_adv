@@ -204,22 +204,11 @@ h1 {
     bottom: 0;
     width: 100%;
 }
-
-/* Product Grid Styles */
-.section-name {
-    padding: 20px 0; /* Vertical padding for the section */
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* Space below the heading */
-}
-
 .section-title {
-    font-size: 24px; /* Title font size */
+    font-size: 40px; /* Title font size */
     font-weight: bold; /* Title font weight */
+    align-content: center;
+    margin-top: 10%;
 }
 
 .btn-outline-primary {
@@ -236,13 +225,7 @@ h1 {
     color: white; /* Text color on hover */
 }
 
-.row {
-    display: flex; /* Use flexbox for the row */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    margin: -10px; /* Negative margin to offset padding on columns */
-}
-
-.col-md-6 {
+.col-md {
     flex: 0 0 50%; /* 50% width for medium devices */
     padding: 10px; /* Padding around each column */
     box-sizing: border-box; /* Include padding in width calculation */
@@ -288,13 +271,13 @@ h1 {
 
 /* Responsive styles */
 @media (max-width: 992px) {
-    .col-md-6 {
+    .col-md{
         flex: 0 0 100%; /* 100% width for small devices */
     }
 }
 
 @media (min-width: 993px) {
-    .col-md-6 {
+    .col-md {
         flex: 0 0 50%; /* 50% width for medium devices and up */
     }
 }
