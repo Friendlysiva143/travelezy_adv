@@ -1,13 +1,47 @@
-from django.shortcuts import render
-from .forms import RegistrationForm
+from django.shortcuts import render,redirect
+from .forms import RegistrationForms
+from .models import Account
+from django.contrib import messages,auth
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def register(request):
-    form=RegistrationForm()
+    if request.method=='POST':
+        form=RegistrationForms(request.POST)
+        if form.is_valid():
+            first_name=form.cleaned_data['first_name']
+            last_name=form.cleaned_data['last_name']
+            phone_number=form.cleaned_data['phone_number']
+            email=form.cleaned_data['email']
+            password=form.cleaned_data['password']
+            username=email.split('@')[0]
+            user=Account.objects.create_user(first_name=first_name,last_name=last_name,password=password,username=username,email=email)
+            user.phone_number=phone_number
+            user.save()
+            messages.success(request,'Registration success')
+            return redirect('register')
+    else:
+        form = RegistrationForms()
     context={
         'form':form
     }
-    return render(request,'accounts/register.html')
+    return render(request,'accounts/register.html',context)
 def login(request):
+    if request.method=='POST':
+        email=request.POST['email']
+        password=request.POST['password']
+        user=auth.authenticate(email=email,password=password)
+        if user is not None:
+            auth.login(request,user)
+            # messages.success(request,"logged in")
+            return redirect('home')
+        else:
+            messages.error(request,"invalid credentials")
+            return redirect('login')
     return render(request,'accounts/login.html')
+@login_required
 def logout(request):
-    return render(request,'accounts/logout.html')
+    auth.logout(request)
+    messages.success(request,"you are logged out")
+    return redirect('login')
+def profile(request):
+    return render(request,'accounts/profile.html')

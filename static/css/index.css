@@ -24,7 +24,7 @@ header {
     z-index: 1000;
     display: flex; /* Use flexbox for layout */
     align-items: left; /* Center align items vertically */
-    justify-content: space-between; /* Space between logo/title and nav */
+     /* Space between logo/title and nav */
 }
 
 header .logo {
