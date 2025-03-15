@@ -5,4 +5,4 @@ def home(request):
     context={
         'places':places,
     }
-    return render(request,'home.html',context)
+    return render(request,'index.html',context)

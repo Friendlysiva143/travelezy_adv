@@ -10,6 +10,7 @@
     <label>PASSWORD:</label><span>{{user.password}}</span><br>
     <label>EMAIL:</label><span>{{user.email}}</span><br>
     <button onclick="goHome()">Go Home</button>
+    <button><a href="{% url 'logout' %}">Logout</a></button>
 </div>
 <style>
     .profile {
@@ -73,6 +74,7 @@
             window.location.href = '/';
         }, 500);
     }
+    
 </script>
 </div>
 {% endblock %}

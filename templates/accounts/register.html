@@ -3,6 +3,8 @@
 {% block content %}
 <div class="form_wrapper">
     <div class="form_container">
+      <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
       <div class="title_container">
         <h2>Registration Form</h2>
       </div>

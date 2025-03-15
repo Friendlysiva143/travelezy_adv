@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% if request.GET.command == 'verification' %}
+<div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1000px;margin: 200px;">
+  Thank you for Registration!,We have sent activation link to your email address [{{request.GET.email}}] verify it to login.
+  <br><br>
+  Already verified?<a href="{% url 'login' %}">Login</a>
+</div>
+{% else %}
 <div class="form_wrapper">
     <div class="form_container">
       <div class="title_container">
@@ -28,4 +34,5 @@
       </div>
     </div>
   </div>
+  {% endif%}
 {% endblock %}

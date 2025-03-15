@@ -86,7 +86,8 @@ DATABASES = {
         'NAME': 'adventure',
         'USER':'postgres',
         'PASSWORD':'1234',
-        'HOST':'localhost'
+        'HOST':'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -141,3 +142,9 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS={
     messages.ERROR:'danger'
 }
+#smtp configuration
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='travelezyproject@gmail.com'
+EMAIL_HOST_PASSWORD='fnkn cpuq najs vaav'
+EMAIL_USE_TLS=True
