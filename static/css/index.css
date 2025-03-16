@@ -40,8 +40,9 @@ header .logo img {
 .title {
     font-size: 50px; /* Increase font size for the title */
     font-weight: bold; /* Make the title bold */
-    color: #FFD700; /* Gold color for the title */
-    margin: 0; /* Remove default margin */
+    color: #dfdfdf; /* Gold color for the title */
+    margin: 0; 
+    padding: 10px;/* Remove default margin */
 }
 
 .search-category {
@@ -125,7 +126,8 @@ header .logo img {
 
 nav {
     display: flex; /* Use flexbox for navigation items */
-    align-items: center; /* Center align items vertically */
+    align-items: center; 
+
 }
 
 nav a {

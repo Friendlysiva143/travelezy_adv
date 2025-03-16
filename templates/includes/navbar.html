@@ -1,11 +1,11 @@
 {% load static %}
 <header>
+    <nav>
     <div class="logo">
         <a href="{% url 'home' %}"> <img src="{% static 'images/travel_logo.jpeg' %}" alt="Travel Logo"> </a><!-- Replace with your logo URL -->
-    </div>
     <h1 class="title">TRVELEZY</h1>
+    </div>
 
-    <nav>
         <div class="search-category">
             <div class="dropdown">
                 <button class="dropbtn">Select Category</button>
@@ -24,7 +24,7 @@
     
         </form>
     </div>
-        <a href="/">Home</a>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
         {% if user.id is None%}
         <a href="{% url 'login' %}">Login</a>
         <a href="{% url 'register' %}">Register</a>

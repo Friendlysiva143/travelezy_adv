@@ -37,8 +37,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-setTimeout(function()
-{
-    $('#message').fadeout('slow')
-
-},4000)
