@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section-title">
+    {% if 'search' in request.path %}
+    <h2 class="title-page">searched places</h2>
+    {% else %}
+        <h2 class="title-page">Place to visit</h2>
+    {% endif %}
+</section>
+    <!-- ========================= SECTION CONTENT ========================= -->
+    {% if 'search' not in request.path %}
+    <section class="section-content padding-y">
+    <div class="container">
+    <div class="card">
+        <article class="filter-group">
+            <div class="filter-content collapse show" id="collapse_1">
+                <div class="card-body">
+                    <ul class="list-menu" >
+                        {% for catogery in links %}
+                    <li ><a href="{{catogery.get_url}}">{{catogery.catogery_name}} </a></li>
+                   {% endfor %}
+                    </ul>
+                </div> <!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group  .// -->
+        <article class="filter-group">
+            <div class="filter-content collapse show" id="collapse_4" style="">
+                <div class="card-body">
+                  <label class="checkbox-btn">
+                    <input type="checkbox">
+                    <span class="btn btn-light"> Trekking </span>
+                  </label>
+    
+                  <label class="checkbox-btn">
+                    <input type="checkbox">
+                    <span class="btn btn-light"> Nature </span>
+                  </label>
+    
+                  <label class="checkbox-btn">
+                    <input type="checkbox">
+                    <span class="btn btn-light"> Historic </span>
+                  </label>
+    
+                  <label class="checkbox-btn">
+                    <input type="checkbox">
+                    <span class="btn btn-light">  Devotional</span>
+                  </label>
+            </div><!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// -->
+            <div class="filter-content collapse show" id="collapse_3" >
+                <div class="card-body">
+                    <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Min Budget</label>
+                      <!-- <input class="form-control" placeholder="$0" type="number"> -->
+                          <select class="mr-2 form-control">
+                            <option value="0">$0</option>
+                            <option value="50">$50</option>
+                            <option value="100">$100</option>
+                            <option value="150">$150</option>
+                            <option value="200">$200</option>
+                            <option value="500">$500</option>
+                            <option value="1000">$1000</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-right col-md-6">
+                      <label>Max Budget</label>
+                          <select class="mr-2 form-control">
+                            <option value="50">$50</option>
+                            <option value="100">$100</option>
+                            <option value="150">$150</option>
+                            <option value="200">$200</option>
+                            <option value="500">$500</option>
+                            <option value="1000">$1000</option>
+                            <option value="2000">$2000+</option>
+                        </select>
+                    </div>
+            
+                    <button class="btn btn-block btn-primary">Apply</button>
+                </div><!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// --> 
+    </div> <!-- card.// --> 
+    <div> {{places_count}} places found </div>  
+    <div class="advent">
+        {% if places %}
+        {% for place in places %}
+        <div class="col-md">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> 
+                    <a href="{{place.get_url}}"><img src="{{place.images.url}}" alt="image" style="height: 150px; width: 150px;"></a>
+                </div> <!-- img-wrap.// -->
+                <figcaption class="info-wrap">
+                    <div class="fix-height">
+                        <a href="{{place.get_url}}" class="title">{{place.place_name}}</a>
+                        <div class="price-wrap mt-2">
+                            <span class="price">{{place.start_date}}</span>
+                            <del class="price-old">{{place.end_date}}</del>
+                        </div> <!-- price-wrap.// -->
+                    </div>
+                    <p>{{place.description}}</p>
+                    <a href="#" class="btn btn-block btn-success">Added to Whitelist </a>   
+                </figcaption>
+            </figure>
+        </div> <!-- col.// -->
+        {% endfor %}
+        {% else %}
+        <div>no results found.. try again</div>
+        {% endif %}
+    </div>
+    </div>
+    
+    </div> 
+    {% else %} 
+    <div> {{places_count}} places found </div>  
+    <div class="advent">
+        {% if places %}
+        {% for place in places %}
+        <div class="col-md">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> 
+                    <a href="{{place.get_url}}"><img src="{{place.images.url}}" alt="image" style="height: 150px; width: 150px;"></a>
+                </div> <!-- img-wrap.// -->
+                <figcaption class="info-wrap">
+                    <div class="fix-height">
+                        <a href="{{place.get_url}}" class="title">{{place.place_name}}</a>
+                        <div class="price-wrap mt-2">
+                            <span class="price">{{place.start_date}}</span>
+                            <del class="price-old">{{place.end_date}}</del>
+                        </div> <!-- price-wrap.// -->
+                    </div>
+                    <p>{{place.description}}</p>
+                    <a href="#" class="btn btn-block btn-success">Added to Whitelist </a>   
+                </figcaption>
+            </figure>
+        </div> <!-- col.// -->
+        {% endfor %}
+        {% else %}
+        <div>no results found.. try again</div>
+        {% endif %}
+    </div>
+    </div>
+    </div> <!-- container .//  -->
+    {% endif %}
+    </section>
+{% endblock %}

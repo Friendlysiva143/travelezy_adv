@@ -1,0 +1,199 @@
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+    display: none; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background.jpg'); /* Replace with your background image URL */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    color: #333; /* Default text color */
+}
+
+header {
+    background-color: rgba(0, 123, 255, 0.7); /* Blue color with transparency */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo img {
+    height: 50px; /* Adjust logo height */
+    margin-right: 15px; /* Space between logo and title */
+}
+
+.title {
+    font-size: 32px; /* Increase font size for the title */
+    font-weight: bold; /* Make the title bold */
+    color: #FFD700; /* Gold color for the title */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow title to take available space */
+    text-align: center; /* Center the title */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a subtle shadow for better visibility */
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 80px; /* Space for fixed header */
+    padding: 20px;
+    max-width: 600px; /* Adjusted width for the form */
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.image-carousel {
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px; /* Set a max width for the carousel */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel img {
+    width: 800px; /* Fixed width for all images */
+    height: 500px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#prev {
+    left: 10px; /* Position left button */
+}
+
+#next {
+    right: 10px; /* Position right button */
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Center the contact info */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-info p {
+    text-align: center;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 123, 255, 0.7); /* Blue color with transparency */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

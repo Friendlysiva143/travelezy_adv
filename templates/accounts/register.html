@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form_wrapper">
+    <div class="form_container">
+      <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+      <div class="title_container">
+        <h2>Registration Form</h2>
+      </div>
+     <div class="container">{% include 'includes/alerts.html' %}</div>
+      <div class="row clearfix">
+        <div class="">
+          <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="input_field"> 
+              <label>Email:</label>
+              {{form.email}}
+            </div>
+            <div class="input_field"> 
+              <label>Create Password:</label>
+              {{form.password}}
+            </div>
+            <div class="input_field"> 
+              <label>Retype Password:</label>
+              {{form.confirm_password}}
+            </div>
+            <div class="input_field">
+              <label>Phone Number:</label>
+              {{form.phone_number}}
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field">  <label>First Name:</label>
+                  {{ form.first_name }}
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <label>Last Name:</label>
+                  {{form.last_name}}
+                </div>
+              </div>
+            </div>
+          
+
+            <div class="input_field checkbox_option">
+              <input type="checkbox" id="cb1">
+              <label for="cb1">I agree with terms and conditions</label>
+            </div>
+            <div class="input_field checkbox_option">
+              <input type="checkbox" id="cb2">
+              <label for="cb2">I want to receive the newsletter</label>
+            </div>
+            <div>
+              {{form.email.errors}}
+              {{form.non_field_errors}}
+            </div>
+        
+            <input class="button" type="submit" value="Register" />
+           
+          </form>
+          <div><span>i already have account <a href="{% url 'login' %}"> click here</a></span>
+   <!-- {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}-->
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

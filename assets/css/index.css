@@ -1,0 +1,366 @@
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+    display: none; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background.jpg'); /* Replace with your background image URL */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    color: #333; /* Default text color */
+}
+
+header {
+    background-color: rgba(0, 123, 255, 0.7); /* Blue color with transparency */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex; /* Use flexbox for layout */
+    align-items: left; /* Center align items vertically */
+    justify-content: space-between; /* Space between logo/title and nav */
+}
+
+header .logo {
+    display: flex; /* Align logo and title in a row */
+    align-items: left; /* Center align logo and title */
+}
+
+header .logo img {
+    height: 50px; /* Adjust logo height */
+    margin-right: 15px; /* Space between logo and title */
+}
+
+.title {
+    font-size: 50px; /* Increase font size for the title */
+    font-weight: bold; /* Make the title bold */
+    color: #FFD700; /* Gold color for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.search-category {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center the search bar and dropdown */
+    align-items: center; /* Center align items vertically */
+    flex-grow: 1; /* Allow search category to grow */
+}
+
+.search-category input[type="text"] {
+    padding: 10px;
+    border: 2px solid #007bff; /* Thicker border for attractiveness */
+    border-radius: 5px;
+    margin-right: 5px; /* Space between input and dropdown */
+    flex: 1; /* Allow input to take available space */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.search-category input[type="text"]:focus {
+    border-color: #0056b3; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #1321e6; /* Green */
+    color: rgb(185, 32, 32);
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff; /* Light grey */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(8, 8, 8); /* Black text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #44b038; /* Light grey on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown on hover */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41; /* Darker green on hover */
+}
+
+.search-category button[type="submit"] {
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.search-category button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+nav {
+    display: flex; /* Use flexbox for navigation items */
+    align-items: center; /* Center align items vertically */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Space between links */
+    padding: 10px ; /* Padding around links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.content {
+    margin-top: 80px; /* Space for fixed header */
+    padding: 20px;
+    max-width: 600px; /* Adjusted width for the form */
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%; /* Full width for inputs */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.form-group input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.button {
+    background-color: #28a745; /* Green button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.button:hover {
+    background-color: #218838; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 123, 255, 0.7); /* Match header color */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.section-title {
+    font-size: 40px; /* Title font size */
+    font-weight: bold; /* Title font weight */
+    align-content: center;
+    margin-top: 10%;
+}
+
+.btn-outline-primary {
+    border: 1px solid #007bff; /* Button border color */
+    color: #007bff; /* Button text color */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.col-md {
+    flex: 0 0 50%; /* 50% width for medium devices */
+    padding: 10px; /* Padding around each column */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.card {
+    background: white; /* Card background color */
+    border: 1px solid #ddd; /* Card border color */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.img-wrap {
+    display: block; /* Block display for image wrap */
+}
+
+.img-wrap img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.info-wrap {
+    padding: 15px; /* Padding inside the card */
+}
+
+.title {
+    font-size: 16px; /* Title font size */
+    color: #333; /* Title color */
+    text-decoration: none; /* Remove underline */
+}
+
+.price {
+    font-size: 18px; /* Price font size */
+    color: #007bff; /* Price color */
+    margin-top: 5px; /* Space above price */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .col-md{
+        flex: 0 0 100%; /* 100% width for small devices */
+    }
+}
+
+@media (min-width: 993px) {
+    .col-md {
+        flex: 0 0 50%; /* 50% width for medium devices and up */
+    }
+}
+
+.image-carousel {
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px; /* Set a max width for the carousel */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel img {
+    width: 800px; /* Fixed width for all images */
+    height: 500px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#prev {
+    left: 10px; /* Position left button */
+}
+
+#next {
+    right: 10px; /* Position right button */
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Center the contact info */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-info p {
+    text-align: center;
+    color: #555;
+}

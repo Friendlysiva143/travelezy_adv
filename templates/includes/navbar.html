@@ -1,0 +1,37 @@
+{% load static %}
+<header>
+    <div class="logo">
+        <a href="{% url 'home' %}"> <img src="{% static 'images/travel_logo.jpeg' %}" alt="Travel Logo"> </a><!-- Replace with your logo URL -->
+    </div>
+    <h1 class="title">TRVELEZY</h1>
+
+    <nav>
+        <div class="search-category">
+            <div class="dropdown">
+                <button class="dropbtn">Select Category</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'trips' %}" class="dropdown-item">All places</a>
+                    {% for category in links %}
+                    <a href="{{ category.get_url }}" class="dropdown-item">{{category.catogery_name}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        
+        <a href="{% url 'trips' %}" class="btn btn-outline-primary float-right" style="color: black;">See all</a>
+        <form action="{% url 'search' %}" class="search_box" method="GET">
+            <input type="text" id="search" name="keyword" placeholder="Search for destinations..." required>
+            <button type="submit">Search</button>
+    
+        </form>
+    </div>
+        <a href="/">Home</a>
+        {% if user.id is None%}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        {% else %}
+        <a href="{% url 'profile' %}">Hello,{{user.first_name}}</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+        
+    </nav>
+</header>
